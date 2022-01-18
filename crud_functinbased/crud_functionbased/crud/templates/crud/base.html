@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- load static files-->
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD</title>
+<!--    included css static file-->
+    <link rel="stylesheet" href="{% static 'crud/css/bootstrap.css' %}">
+</head>
+<body>
+<div class="container" mt-5>
+    <h4 class="text-center alert alert-danger"> Function Based ModelForm Crud Project</h4>
+</div>
+{% block content %}
+{% endblock content %}
+
+<!--    included javascript static file-->
+
+    <script src="{% static 'crud/js/bootstrap.js.js' %}"></script>
+    <script src="{% static 'crud/js/jquery.js' %}"></script>
+    <script src="{% static 'crud/js/popper..js' %}"></script>
+</body>
+<script type="application/ecmascript">
+
+</script>
+</html>

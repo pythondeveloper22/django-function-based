@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .success{
+            color: red;
+        }
+        .info{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+<!--example1-->
+<!--        {% if message.tags %} {{ message.tags }} {% endif %}-->
+<!--<span class="success">{{message}}</span>-->
+        <span {% if message.tags %}  class="{{message.tags}} {% endif %}">{{message}}</span>
+
+        {% endfor %}
+    {% endif %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="submit">
+
+</form>
+</body>
+</html>

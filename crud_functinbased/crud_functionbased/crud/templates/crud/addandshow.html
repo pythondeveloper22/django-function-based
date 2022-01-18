@@ -1,0 +1,51 @@
+{% extends 'crud/base.html' %}
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-4">
+        <h4 class="text-center alert alert-info">Add New Student</h4>
+        <form action="" method="POST" novalidate>
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" class="btn btn-success" value="Add">
+        </form>
+    </div>
+</div>
+<h4> show data</h4>
+<!--{{student}}-->
+{% if student %}
+    <table border="1">
+      <tr>
+        <th>Id</th>
+        <th>NAme</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Action</th>
+      </tr>
+        {% for st in student %}
+      <tr>
+        <td>{{st.id}}</td>
+        <td>{{st.name}}</td>
+        <td>{{st.email}}</td>
+        <td>{{st.password}}</td>
+        <td>
+<!--               {% url 'deletedata' st.id %} this is dynamic url-->
+            <a href="{% url 'updatedata' st.id %}" class="btn btn-outline-warning btn-sm">Edit</a>
+<!--            when click on delete button then it should action link delete data show that we taken in under-->
+<!--            form tag-->
+
+            <form action="{% url 'deletedata' st.id %}" method="POST" class="d-inline">
+                {% csrf_token %}
+                <input type="submit"  class="btn btn-outline-danger btn-sm" value="Delete">
+            </form>
+        </td>
+      </tr>
+        {% endfor %}
+    </table>
+<h4>all data</h4>
+{% else %}
+<h4>no data</h4>
+{% endif %}
+
+
+{% endblock content %}
