@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td{
+            border: 1px black solid;
+        }
+    </style>
+</head>
+<body>
+{{ student }}
+
+<h1>{{student.id}}</h1>
+<h1>{{student.student_name}}</h1>
+  {{student.contact_number}}
+  {{student.student_address}}
+{##example2#}
+{#<h2>Student information</h2>#}
+{#<table>#}
+{#    <tr>#}
+{#        <td>Name</td>#}
+{#        <td>Number</td>#}
+{#        <td>Address</td>#}
+{#    </tr>#}
+{#    <h1>{{student}}</h1>#}
+{#    {% for st in student %}#}
+{#    <tr>#}
+{#        <td>{{st.student_name}}</td>#}
+{#        <td>{{st.contact_number}}</td>#}
+{#        <td>{{st.student_address}}</td>#}
+{#    </tr>#}
+{#    {% endfor %}#}
+{#</table>#}
+
+
+<!--this is 1irst example-->
+<!--<h1>{{student}}</h1>-->
+<!--{% if student %}-->
+<!--<h1>show data</h1>-->
+<!--{% for st in student %}-->
+<!--{{st.student_name}}-->
+<!--{{st.contact_number}}-->
+<!--{{st.student_address}}-->
+<!--{% endfor %}-->
+<!--{% else %}-->
+<!--<h1>no data</h1>-->
+<!--{% endif %}-->
+
+</body>
+</html>
